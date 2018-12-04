@@ -1,13 +1,13 @@
 Steps to get started
 
-1. ng new projectname
-2. cd projectname
-3. ng g component leaflet
-4. npm install leaflet
+1. install leaflet by using the following the command
+npm install leaflet
 
-5. download the file from the following link and unzip it inside the directory /src/assets/leaflet: http://cdn.leafletjs.com/leaflet/v1.3.4/leaflet.zip
+2. create a component for the project 
 
-6. Include the leaflet script and CSS style to the src/angular.json file. Here is how it looks:
+3. download the file from the following link and unzip it inside the directory /src/assets/leaflet: http://cdn.leafletjs.com/leaflet/v1.3.4/leaflet.zip
+
+4. Include the leaflet script and CSS style to the src/angular.json file. Here is how it looks:
 
 "styles": [
               "src/styles.css",
@@ -17,9 +17,9 @@ Steps to get started
               "src/assets/leaflet/leaflet.js"
  ]           ]
 
-*note: make sure the directory of the file is the same directory with step 5
+*note: make sure all the directory of the file is the same directory with step 3
 
-7. this is how leaflet.component.html look like
+5. this is how xxx.component.html look like
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +43,7 @@ Steps to get started
 
 </html>
 
-8. this is how leaflet.component.ts look like
+6. this is how xxx.component.ts look like
 
 import { Component, OnInit } from '@angular/core';
 
@@ -77,14 +77,14 @@ export class LeafletComponent implements OnInit {
 
 }
 
-9. this is how leaflet.component.css looks like
+7. this is how xxx.component.css looks like
 
 .div{
     height: 100%;
     width: 100%;
 }
 
-10. this is how app.componentnew.html looks like
+8. this is how app.componentnew.html looks like
 
 <app-leaflet></app-leaflet>
 
