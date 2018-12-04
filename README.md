@@ -62,7 +62,19 @@ export class LeafletComponent implements OnInit {
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
-    }
+
+    let markericon = L.icon({
+      iconUrl:'assets/leaflet/images/marker-icon.png',
+
+      iconSize    :[25,41],
+      iconAnchor  :[15,40],
+      popupAnchor :[-47,-20]
+    })
+
+    L.marker([5.35714,100.30281],{icon:markericon}).addTo(map).bindPopup("DTSP");
+    L.marker([5.35914,100.30285],{icon:markericon}).addTo(map).bindPopup("Pusat Sejahtera");
+  }
+
 }
 
 9. this is how leaflet.component.css looks like
