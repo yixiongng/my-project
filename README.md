@@ -1,38 +1,81 @@
-Steps to get started to install leaflet in Angular
+Steps to get started
 
-ng new projectname
+1. ng new projectname
+2. cd projectname
+3. ng g component leaflet
+4. npm install leaflet
 
-cd projectname
+5. download the file from the following link and unzip it inside the directory /src/assets/leaflet: http://cdn.leafletjs.com/leaflet/v1.3.4/leaflet.zip
 
-ng g component leaflet
+6. Include the leaflet script and CSS style to the src/angular.json file. Here is how it looks:
 
-npm install leaflet
-
-download the file from the following link and unzip it inside the directory /src/assets/leaflet: http://cdn.leafletjs.com/leaflet/v1.3.4/leaflet.zip
-
-Include the leaflet script and CSS style to the src/angular.json file. Here is how it looks:
-
-"styles": [ "src/styles.css", "src/assets/leaflet/leaflet.css" ], "scripts": [ "src/assets/leaflet/leaflet.js" ] ]
+"styles": [
+              "src/styles.css",
+              "src/assets/leaflet/leaflet.css"
+ ],
+ "scripts": [
+              "src/assets/leaflet/leaflet.js"
+ ]           ]
 
 *note: make sure the directory of the file is the same directory with step 5
 
-this is how leaflet.component.html look like
-<style> #mapid { height: 1000px; width: 100% } </style>
-this is how leaflet.component.ts look like
+7. this is how leaflet.component.html look like
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+
+<style>
+
+#mapid { height: 1000px;
+  width: 100% }
+
+</style>
+
+</head>
+
+<body>
+
+<div id="mapid"></div>
+
+</body>
+
+</html>
+
+8. this is how leaflet.component.ts look like
+
 import { Component, OnInit } from '@angular/core';
 
-declare let L; @Component({ selector: 'app-leaflet', templateUrl: './leaflet.component.html', styleUrls: ['./leaflet.component.css'] }) export class LeafletComponent implements OnInit {
+declare let L;
+@Component({
+  selector: 'app-leaflet',
+  templateUrl: './leaflet.component.html',
+  styleUrls: ['./leaflet.component.css']
+})
+export class LeafletComponent implements OnInit {
 
-constructor() { }
+  constructor() { }
 
-ngOnInit() { const map = L.map('mapid').setView([5.35714,100.30281], 50);
+  ngOnInit() {
+    const map = L.map('mapid').setView([5.35714,100.30281], 50);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+    }
 }
+
+9. this is how leaflet.component.css looks like
+
+.div{
+    height: 100%;
+    width: 100%;
 }
 
-this is how leaflet.component.css looks like
-.div{ height: 100%; width: 100%; }
+10. this is how app.componentnew.html looks like
 
-this is how app.componentnew.html looks like
+<app-leaflet></app-leaflet>
+
+
+
+
