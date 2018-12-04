@@ -1,7 +1,6 @@
 Steps to get started
 
-1. install leaflet by using the following the command
-npm install leaflet
+1. install leaflet by using the following the command : npm install leaflet
 
 2. create a component for the project 
 
